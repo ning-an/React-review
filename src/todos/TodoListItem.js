@@ -12,14 +12,14 @@ export default function TodoListItem({
         {todo.isCompleted ? null : (
           <button
             className="completed-button"
-            onClick={() => onCompletePressed(todo.text)}
+            onClick={() => onCompletePressed(todo.id)}
           >
             Mark as completed
           </button>
         )}
         <button
           className="remove-button"
-          onClick={() => onRemovePressed(todo.text)}
+          onClick={() => onRemovePressed(todo.id)}
         >
           Remove
         </button>
