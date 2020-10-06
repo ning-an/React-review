@@ -8,7 +8,7 @@ import {
   removeTodoRequest,
   completeTodoRequest,
 } from "./thunks";
-import { isLoading } from "./reducers";
+import { getTodos, getTodosLoading } from "./selectors";
 
 const TodoList = ({
   todos = [],
@@ -38,8 +38,8 @@ const TodoList = ({
 };
 
 const mapStateToProps = (state) => ({
-  todos: state.todos,
-  isLoading: state.isLoading,
+  todos: getTodos(state),
+  isLoading: getTodosLoading(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   onRemovePressed: (id) => dispatch(removeTodoRequest(id)),
